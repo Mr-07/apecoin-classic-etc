@@ -9,7 +9,7 @@ function About() {
                 <Flex className="image-wrapper hero-v2" h={"70vh"}>
                     <Flex className="about-header-text-container">
                         <Text className="about-header-text">
-                            We are on a mission to democratize finance through crypto
+                            ACE is the first community token on ETC
                         </Text>
                     </Flex>
                     <motion.div

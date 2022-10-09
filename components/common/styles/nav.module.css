@@ -2,11 +2,28 @@
 	cursor: pointer;
 	transition: color 0.25s;
 }
+
 .menuBtn:hover {
 	opacity: 0.6;
 }
 
 .disabledMenuBtn {
+	color: #8d8d88;
+	cursor: not-allowed;
+}
+
+.footerMenuBtn {
+	margin: 0 !important;
+	cursor: pointer;
+	transition: color 0.25s;
+}
+
+.footerMenuBtn:hover {
+	opacity: 0.6;
+}
+
+.disabledfooterMenuBtn {
+	margin: 0 !important;
 	color: #8d8d88;
 	cursor: not-allowed;
 }

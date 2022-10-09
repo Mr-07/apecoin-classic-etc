@@ -1,5 +1,3 @@
-import styles from '../styles/Home.module.css'
-import Image from 'next/image';
 import { Flex, Box, Text } from '@chakra-ui/react';
 import { motion } from "framer-motion";
 
@@ -8,6 +6,11 @@ export default function Home() {
         <>
             <Box id="home" w="100%" h="100vh" bg="#07091b" position="relative">
                 <Flex className="image-wrapper hero-v1">
+                    <Flex mb={"50px"} mt={"30px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+                        <Text className='tokenomics-title'>
+                            ApeCoin Classic ETC
+                        </Text>
+                    </Flex>
                     <Flex alignItems={"center"} w={"30%"} opacity={0.8}>
                         <Text>
                             ACE is the first community token on ETC mostly controlled by people who believe Ethereum Classic
@@ -34,18 +37,159 @@ export default function Home() {
                 </Flex>
             </Box>
             <Box id="home1" w="100%" h="100vh" bg="#07091b" position="relative">
-                <Flex justifyContent={"center"} alignItems={"center"}>
-                    <Flex>
-                        <Text>
+                <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
+                    <Flex mb={"50px"} mt={"30px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+                        <Text className='tokenomics-title'>
                             Tokenomics
                         </Text>
+                        <Flex mb={"10px"} mt={"10px"}>
+                            <Text>
+                                Total Supply: 1 trillion (1,000,000,000,000)
+                            </Text>
+                        </Flex>
                     </Flex>
-                    <Flex>
-                        <img src="tokenomics-image.svg" loading="eager" alt="" className="image cover" />
+                    <Flex width={"100%"}>
+                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={"33%"}>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>2.13</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(21,320,000,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Airdropped to 1066 active addresses on ETC dAPPS
+                                </Text>
+                            </Flex>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>1.54</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(15,439,924,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Distributed to previous holders.
+                                </Text>
+                            </Flex>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>9.8</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(98,000,000,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Distributed among ETC advisors + Initial Marketing
+                                </Text>
+                            </Flex>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>2</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(20,000,000,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Secondary Contract Creator
+                                </Text>
+                            </Flex>
+                        </Flex>
+                        <Flex width={"34%"}>
+                            <img src="tokenomics-image.png" loading="eager" alt="" className="image cover" />
+                        </Flex>
+                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={"33%"}>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>21.8</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(218,000,000,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Burned! 218 Billion (B) burned (213 B sent to burn wallet and 5 B burned by removing from Total Supply).
+                                </Text>
+                            </Flex>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>5</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(50,000,000,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Creator
+                                </Text>
+                            </Flex>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>36.9</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(369,000,000,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Dumped into the liquidity pool.
+                                </Text>
+                            </Flex>
+                            <Flex flexDirection={"column"} w={"70%"}>
+                                <Flex>
+                                    <Text className='tokenomics-number'>20.02</Text>
+                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(200,240,076,000)</Text>
+                                </Flex>
+                                <Text className='tokenomics-text'>
+                                    Multisignature Team Wallet for collabs, additional liquidity, giveaways and more
+                                </Text>
+                            </Flex>
+                        </Flex>
+                    </Flex>
+                    <Flex mt={"50px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+                        <Flex flexDirection={"column"}>
+                            <Flex>
+                                <Text className='tokenomics-number'>0.8</Text>
+                                <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text display={"flex"} alignItems={"flex-end"} >(8,000,000,000)</Text>
+                            </Flex>
+                            <Text className='tokenomics-text'>
+                                Misc Expenditure
+                            </Text>
+                        </Flex>
                     </Flex>
                 </Flex>
             </Box>
             <div className="container-default w-container"><div className="divider _0px"></div></div>
+            <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
+                <Flex mt={"50px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+                    <Text className='tokenomics-title'>
+                        Liquidity
+                    </Text>
+                </Flex>
+                <Flex width={"80%"} alignItems={"center"}>
+                    <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
+                    <Text lineHeight={1.7} padding={"10px"} textAlign={"justify"}>
+                        <b>35%</b> of the overall supply will be dumped into liquidity with an initial amount of 15 ETC.
+                        This means that only purchases of about 0.5 ETC will initially go through.
+                        This enables the “little guys” who believe in this project to become potential whales as we move forward.
+                        As purchases come and the liquidity floor rises, the amount that can be purchased will also rise.
+                        This ensures decentralization of our coin. We are leaderless, permissionless and immutable.
+                        With the majority of our coin controlled by the ETC Army, we hope that community organization will naturally occur and
+                        the community as a whole will move this project forward.
+                    </Text>
+                </Flex>
+            </Flex>
+            <div className="container-default w-container"><div className="divider _0px"></div></div>
+            <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
+                <Flex mt={"50px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+                    <Text className='tokenomics-title'>
+                        Burning LP Tokens
+                    </Text>
+                </Flex>
+                <Flex width={"80%"} alignItems={"center"}>
+                    <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
+                    <Text lineHeight={1.7} padding={"10px"} textAlign={"justify"}>
+                        <b>70%</b> of liquidity pool tokens will be sent to a dead address. This means that our token will trade forever!
+                        70% of our liquidity on HEBE Swap cannot be withdrawn! This also ensures the public that we are here to stay.
+                        You may be wondering why 70% and not 100%? This is because we are preparing for the future as well.
+                        When we get to a point where we are able to get listed on a major exchange, we would need a lot of liquidity
+                        to be accepted on some of the large exchanges and it would be a shame if we had several million dollars of liquidity
+                        stuck on Hebe Swap and couldn’t move 200K for liquidity to get listed on Binance or Kucoin.
+                    </Text>
+                </Flex>
+            </Flex>
         </>
     )
 }

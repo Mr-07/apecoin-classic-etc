@@ -1,8 +1,10 @@
 
-@media (max-width: 600px) {
+@media screen and (max-width: 1023px) {
 
 }
+@media screen and (max-width: 767px) {
 
-@media (prefers-color-scheme: dark) {
+}
+@media screen and (max-width: 570px) {
 
 }

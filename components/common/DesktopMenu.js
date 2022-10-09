@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, HStack, Flex } from '@chakra-ui/react';
-import DesktopNavButton from './DesktopNavButton';
+import { Icon, HStack, Flex } from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons'
 import styles from './styles/nav.module.css';
 const NAV_STYLE = { listStyle: 'none', paddingLeft: 0 };
 
@@ -18,12 +18,15 @@ const DesktopMenu = () => {
                         About
                     </a>
                 </li>
-                <li className={styles.menuBtn}>
-                    <a href="https://docs.google.com/document/u/0/d/14r4oyV36HcDV_LAU5PyVqAKh_XWTo-yfe3TanmTtodY/mobilebasic" target="_blank">
+                <li className={styles.disabledMenuBtn} title={"coming soon..."}>
+                    {/* <a href="https://docs.google.com/document/u/0/d/14r4oyV36HcDV_LAU5PyVqAKh_XWTo-yfe3TanmTtodY/mobilebasic" target="_blank"> */}
                         Whitepaper
-                    </a>
+                    {/* </a> */}
                 </li>
-                <DesktopNavButton targetElementId="etc_resources" label="ETC Resources" />
+                {/* <li className={styles.menuBtn}>
+                    ETC Resources
+                    <ChevronDownIcon />
+                </li> */}
                 <li className={styles.menuBtn}>
                     <a href="https://medium.com/@apecoinclassic" target="_blank">
                         Blog
@@ -34,11 +37,11 @@ const DesktopMenu = () => {
                         Roadmap
                     </a>
                 </li>
-                <li className={styles.menuBtn}>
+                {/* <li className={styles.menuBtn}>
                     <a href="/FAQ">
                         FAQ
                     </a>
-                </li>
+                </li> */}
             </HStack>
         </Flex>
     );

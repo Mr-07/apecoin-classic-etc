@@ -1,54 +1,40 @@
 import React from "react";
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Box, Container, Accordion } from "@chakra-ui/react";
+
+import FAQItem from "../components/common/FAQItem";
 
 function FAQ() {
     return (
         <>
-            <Box id="about" w="100%" h="70vh" bg="#07091b" position="relative">
-                <Flex className="image-wrapper hero-v2" h={"70vh"}>
-                    <Flex className="about-header-text-container">
-                        <Text className="about-header-text">
-                            We are on a mission to democratize finance through crypto
-                        </Text>
-                    </Flex>
-                    <motion.div
-                        className="box"
-                        initial={{ opacity: 1, filter: "blur(0px)" }}
-                        animate={{ opacity: [0.67, 0.63, 0.60, 0.63, 0.67], filter: ["blur(0.1px)", "blur(0.6px)", "blur(0.9px)", "blur(0.6px)", "blur(0.1px)"] }}
-                        transition={{
-                            duration: 2,
-                            ease: "easeInOut",
-                            times: [0, 0.2, 0.5, 0.8, 1],
-                            repeat: Infinity,
-                            repeatDelay: 0.7
-                        }}
-                    >
-                        <img src="about-bg-p.webp" loading="eager" sizes="100vw" alt="" className="image cover"
-                            srcSet="about-bg-p-500.webp 500w, about-bg-p-800.webp 800w, about-bg-p-1080.webp 1080w, about-bg-p-1600.webp 1600w, about-bg-p-2000.webp 2000w, about-bg-p-2600.webp 2600w, about-bg-p.webp 2880w"
+            <Container w="100%" maxW="800px" h={"70vh"} pt={"50px"} centerContent justifyContent={"center"} alignItems={"center"}>
+                <Box id="faqs" w="100%">
+                    <Accordion allowToggle>
+                        <FAQItem
+                            title="In what order will the NFT’s be launched?"
+                            body="Binance, Ethereum Classic, Ethereum"
                         />
-                    </motion.div>
-                    <div className="position-absolute hero-v2-fade" />
-                </Flex>
-            </Box>
-            <Box id="about1" w="100%" h="100vh" bg="#07091b" position="relative">
-                <Flex paddingTop={"10vh"}>
-                    <Flex w={"50%"} justifyContent={"center"} alignItems={"flex-end"} mixBlendMode={"lighten"}>
-                        <img src="ethereum_classic_bg.png" loading="eager" alt="" className="ethereum-classic-bg"></img>
-                        <img src="ethereum_classic.png" loading="eager" alt="" className="ethereum-classic" ></img>
-                    </Flex>
-                    <Flex w={"40%"} textAlign={"justify"}>
-                        <Text>
-                            ACE is the first community token on ETC mostly controlled by people who believe Ethereum Classic is poised to become the top programmable blockchain in the world.
-                            We aspire to be the first stop for people who want to explore Ethereum Classic. We are also working on collaborating with multiple projects on this immutable and
-                            permissionless chain. We are working on bringing the excitement of a traditional meme coin coupled with education and exploration of ETC. Ethereum Classic is the
-                            only programmable proof of work blockchain project with a capped supply and has never had any downtime! We are building a an information center to help people learn
-                            things like how to unapprove a website from using spending funds in your wallet, where to find resources to learn about ETC, how to navigate ERC20 and ERC721 tokens.
-                        </Text>
-                    </Flex>
-                </Flex>
+                        <FAQItem
+                            title="When will the game be ready to play?"
+                            body="The game is being built and we are on track to release it according to our road map."
+                        />
+                        <FAQItem
+                            title="What is the difference between the Classic Rewards Token and the NFT’s?"
+                            body="The Classic Reward Token will fuel our Stamford Skirmish game and the NFT’s will be the characters used in this game. There will be tournaments with significant winnings at stake and participants will need characters in order to participate."
+                        />
+                        <FAQItem
+                            title="How can I buy Classic Reward Token or Mint NFT’s?"
+                            body="Initially, you will need to connect your wallet to Binance Smart Chain network (Now BNBchain). When our Ethereum Classic NFT’s are ready to mint, you will need to connect your wallet to the Ethereum Classic network."
+                        />
+                        <FAQItem title="Is this a Play-To-Earn game?" body="Yes it is." />
+                        <FAQItem
+                            title="When can I sell my NFT’s"
+                            body="The marketplace will open soon after the NFT’s are minted."
+                        />
+                        <FAQItem title="Can I set any price for my NFT?" body="Yes you can." />
+                    </Accordion>
+                </Box>
+            </Container>
 
-            </Box>
         </>
     );
 }
