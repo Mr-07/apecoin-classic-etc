@@ -17,10 +17,15 @@ const Footer = () => {
             backgroundColor={"#07091b"}
             borderTop="1px solid hsla(0, 0%, 100%, 0.12)"
         >
-            <Flex p={"70px"} justifyContent={"center"} w={"100%"}>
-                <Flex borderRight="1px solid hsla(0, 0%, 100%, 0.4)" pr={"30px"} mr={"30px"} h={"300px"} overflow={"hidden"} w={"50%"} mixBlendMode={"lighten"} flexDirection={"column"} alignItems={"center"}>
+            <Flex p={["30px", "30px", "70px"]} alignItems={"center"} justifyContent={"center"} w={"100%"} flexDirection={["column", "column", "row", "row"]}>
+                <Flex
+                    borderRight={["unset", "unset", "1px solid hsla(0, 0%, 100%, 0.4)"]}
+                    flexDirection={"column"} alignItems={"center"} mixBlendMode={"lighten"}
+                    pr={"30px"} mr={"30px"} h={"300px"} overflow={"hidden"} w={["100%", "100%", "50%"]}
+                    borderBottom={["1px solid hsla(0, 0%, 100%, 0.4)", "1px solid hsla(0, 0%, 100%, 0.4)", "unset"]}
+                >
                     <Flex alignItems={"center"} opacity={0.8} flexDirection={"column"} justifyContent={"center"} position={"absolute"} zIndex={"10"}>
-                        <Flex flexDirection={"row"} width={"50%"}>
+                        <Flex flexDirection={"row"} justifyContent={["center", "center", "flex-start"]} width={["100%", "100%", "50%"]}>
                             <Flex w="60px" h="60px" position="relative" cursor="pointer" _hover={{ opacity: 0.6 }}>
                                 <Image src="/apecoin_classic_etc.jpg" w="120px" h="120px" layout="fill" alt="ApeCoin Classic ETC" />
                             </Flex>
@@ -30,7 +35,7 @@ const Footer = () => {
                                 </Text>
                             </Flex>
                         </Flex>
-                        <Flex width={"50%"} pt={"20px"} color={"#9c9da4"}>
+                        <Flex width={["80%", "70%", "50%"]} pt={"20px"} color={"#9c9da4"} fontSize={["16px", "18px"]}>
                             <Text>
                                 ACE is the first community token on ETC mostly controlled by people who believe Ethereum Classic is poised to become
                                 the top programmable blockchain in the world.
@@ -56,7 +61,7 @@ const Footer = () => {
                         />
                     </motion.div>
                 </Flex>
-                <Flex w={"50%"} justifyContent={"space-between"} pl={"30px"} ml={"30px"}>
+                <Flex width={["100%", "100%", "50%"]} justifyContent={"space-between"} pl={"30px"} ml={["0px", "0px", "30px"]} mt={["30px", "30px", "0px"]}>
                     <Flex flexDirection={"column"}>
                         <Flex mb={"30px"}>
                             <Text fontSize={"20px"} fontWeight={400}>
@@ -124,7 +129,7 @@ const Footer = () => {
                             </HStack>
                         </Flex>
                     </Flex>
-                    <Flex w={"40%"}>
+                    <Flex w={"40%"} display={["none", "flex", "none", "none", "flex"]}>
                         <img src="footer-bg-1-p-500.png" loading="eager" className="image cover"
                             sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 600px, (max-width: 1439px) 47vw, 582px"
                             alt="Our Mission Is To Connect The World Through Data - Cryptocurrency X Webflow Template" />
@@ -135,11 +140,12 @@ const Footer = () => {
             <Flex
                 borderTop="1px solid hsla(0, 0%, 100%, 0.4)"
                 justifyContent={"space-evenly"}
+                flexDirection={["column", "column", "row"]}
                 color={"#9c9da4"}
                 p={"40px 0px"}
             >
-                <Box>Copyright © ApeCoin Classic ETC. All rights reserved.</Box>
-                <HStack gap={1}>
+                <Box order={[1, 1, 0]} pt={"10px"} textAlign={"center"}>Copyright © ApeCoin Classic ETC. All rights reserved.</Box>
+                <HStack gap={1} order={[0, 0, 1]} justifyContent={"center"}>
                     <SquareIconButton
                         icon={FaTwitter}
                         size="28px"

@@ -29,7 +29,7 @@ const Header = ({ contract, setContract }) => {
             mixBlendMode={"lighten"}
             bg="#07091b"
         >
-            <Flex w={"40%"} justifyContent={"center"} alignItems={"center"} >
+            <Flex w={["80%", "80%", "80%", "40%"]} justifyContent={"center"} alignItems={"center"} >
                 <Flex w="60px" h="60px" position="relative" cursor="pointer" _hover={{ opacity: 0.6 }} onClick={onGoBackHome}>
                     <Image src="/apecoin_classic_etc.jpg" w="120px" h="120px" layout="fill" alt="ApeCoin Classic ETC" />
                 </Flex>
