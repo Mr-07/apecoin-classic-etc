@@ -125,7 +125,7 @@ const Footer = () => {
                         </Flex>
                     </Flex>
                     <Flex w={"40%"}>
-                        <img src="footer-bg-1-p-500.png" loading="eager" class="image cover"
+                        <img src="footer-bg-1-p-500.png" loading="eager" className="image cover"
                             sizes="(max-width: 479px) 92vw, (max-width: 767px) 90vw, (max-width: 991px) 600px, (max-width: 1439px) 47vw, 582px"
                             alt="Our Mission Is To Connect The World Through Data - Cryptocurrency X Webflow Template" />
                     </Flex>

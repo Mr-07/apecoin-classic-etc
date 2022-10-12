@@ -6,12 +6,12 @@ export default function Home() {
         <>
             <Box id="home" w="100%" h="100vh" bg="#07091b" position="relative">
                 <Flex className="image-wrapper hero-v1">
-                    <Flex mb={"50px"} mt={"30px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+                    <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} position={"absolute"} top={"20%"} zIndex={11}>
                         <Text className='tokenomics-title'>
                             ApeCoin Classic ETC
                         </Text>
                     </Flex>
-                    <Flex alignItems={"center"} w={"30%"} opacity={0.8}>
+                    <Flex justifyContent={"center"} alignItems={"center"} w={"30%"} opacity={0.8} position={"absolute"} top={"27%"} zIndex={11} textAlign={"center"}>
                         <Text>
                             ACE is the first community token on ETC mostly controlled by people who believe Ethereum Classic
                             is poised to become the top programmable blockchain in the world.
