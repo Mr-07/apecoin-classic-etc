@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 function About() {
     return (
         <>
-            <Box id="about" w="100%" h="70vh" bg="#07091b" position="relative">
-                <Flex className="image-wrapper hero-v2" h={"70vh"}>
-                    <Flex className="about-header-text-container">
+            <Box id="about" w="100%" h="100%" bg="#07091b" position="relative">
+                <Flex className="image-wrapper hero-v2" >
+                    <Flex className="about-header-text-container" position={"absolute"} top={["70%", "50%", "40%", "40%", "20%"]} zIndex={12}>
                         <Text className="about-header-text" fontSize={["32px", "40px", "48px", "56px", "64px"]}>
                             ACE is the first community token on ETC
                         </Text>
@@ -31,13 +31,13 @@ function About() {
                     <div className="position-absolute hero-v2-fade" />
                 </Flex>
             </Box>
-            <Box id="about1" w="100%" h="100vh" bg="#07091b" position="relative">
-                <Flex paddingTop={"10vh"}>
-                    <Flex w={"50%"} justifyContent={"center"} alignItems={"flex-end"} mixBlendMode={"lighten"}>
+            <Box id="about1" w="100%" h="100%" bg="#07091b" position="relative">
+                <Flex flexDirection={["column", "column", "column", "column", "row"]} alignItems={"center"}>
+                    <Flex w={["100%", "100%", "100%", "50%"]} justifyContent={"center"} alignItems={"flex-end"} mixBlendMode={"lighten"}>
                         <img src="ethereum_classic_bg.png" loading="eager" alt="" className="ethereum-classic-bg"></img>
                         <img src="ethereum_classic.png" loading="eager" alt="" className="ethereum-classic" ></img>
                     </Flex>
-                    <Flex w={"40%"} textAlign={"justify"}>
+                    <Flex w={["80%", "80%", "80%", "40%"]} textAlign={"justify"}>
                         <Text>
                             ACE is the first community token on ETC mostly controlled by people who believe Ethereum Classic is poised to become the top programmable blockchain in the world.
                             We aspire to be the first stop for people who want to explore Ethereum Classic. We are also working on collaborating with multiple projects on this immutable and

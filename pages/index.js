@@ -65,7 +65,7 @@ export default function Home() {
                         </Flex>
                     </Flex>
                     <Flex width={"100%"} flexDirection={["column", "column", "column", "column", "row"]}>
-                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={["100%", "100%", "100%", "100%", "33%"]}>
+                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={["0px", "0px", "0px", "10px 50px"]} width={["100%", "100%", "100%", "100%", "33%"]}>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>2.13</Text>
@@ -114,7 +114,7 @@ export default function Home() {
                         <Flex width={["70%", "70%", "70%", "70%", "34%"]} alignSelf={"center"}>
                             <img src="tokenomics-image.png" loading="eager" alt="" className="image cover" />
                         </Flex>
-                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={["100%", "100%", "100%", "100%", "33%"]}>
+                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={["0px", "0px", "0px", "10px 50px"]} width={["100%", "100%", "100%", "100%", "33%"]}>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>21.8</Text>
