@@ -1,10 +1,15 @@
-import { Flex, Box, Text } from '@chakra-ui/react';
+import { Flex, Box, Text, Button } from '@chakra-ui/react';
 import { motion } from "framer-motion";
 
 export default function Home() {
+
+    function redirectToMintNFT() {
+        window.open('https://www.acegenesisnft.com', '_ blank');
+    }
+
     return (
         <>
-            <Box id="home" w="100%" h="100vh" bg="#07091b" position="relative">
+            <Box id="home" w="100%" h="100%" bg="#07091b" position="relative">
                 <Flex className="image-wrapper hero-v1">
                     <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} position={"absolute"} top={["30%", "30%", "30%", "30%", "20%"]} zIndex={11}>
                         <Text className='tokenomics-title' fontSize={["32px", "40px", "48px", "56px", "64px"]}>
@@ -16,6 +21,17 @@ export default function Home() {
                             ACE is the first community token on ETC mostly controlled by people who believe Ethereum Classic
                             is poised to become the top programmable blockchain in the world.
                         </Text>
+                    </Flex>
+                    <Flex justifyContent={"center"} alignItems={"center"} position={"absolute"} top={["70%", "70%", "65%", "70%", "35%"]} zIndex={11} textAlign={"center"}>
+                        <Button
+                            onClick={redirectToMintNFT}
+                            className='mint-button'
+                            align="center"
+                            backgroundImage={"linear-gradient(45deg, #ac50ef, #7059fb 50%, #2ecff6)"}
+                            h="50px"
+                        >
+                            Mint ACE Genesis NFT's
+                        </Button>
                     </Flex>
                     <motion.div
                         className="box"
@@ -36,7 +52,7 @@ export default function Home() {
                     <div className="position-absolute hero-v1-fade" />
                 </Flex>
             </Box>
-            <Box id="home1" w="100%" h="100vh" bg="#07091b" position="relative">
+            <Box id="home1" w="100%" h="100%" bg="#07091b" position="relative">
                 <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
                     <Flex mb={"50px"} mt={"30px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
                         <Text className='tokenomics-title'>
@@ -48,89 +64,97 @@ export default function Home() {
                             </Text>
                         </Flex>
                     </Flex>
-                    <Flex width={"100%"}>
-                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={"33%"}>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                    <Flex width={"100%"} flexDirection={["column", "column", "column", "column", "row"]}>
+                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={["100%", "100%", "100%", "100%", "33%"]}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>2.13</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(21,320,000,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(21,320,000,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(21,320,000,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Airdropped to 1066 active addresses on ETC dAPPS
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>1.54</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(15,439,924,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(15,439,924,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(15,439,924,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Distributed to previous holders.
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>9.8</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(98,000,000,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(98,000,000,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(98,000,000,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Distributed among ETC advisors + Initial Marketing
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>2</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(20,000,000,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(20,000,000,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(20,000,000,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Secondary Contract Creator
                                 </Text>
                             </Flex>
                         </Flex>
-                        <Flex width={"34%"}>
+                        <Flex width={["70%", "70%", "70%", "70%", "34%"]} alignSelf={"center"}>
                             <img src="tokenomics-image.png" loading="eager" alt="" className="image cover" />
                         </Flex>
-                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={"33%"}>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                        <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={["100%", "100%", "100%", "100%", "33%"]}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>21.8</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(218,000,000,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(218,000,000,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(218,000,000,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Burned! 218 Billion (B) burned (213 B sent to burn wallet and 5 B burned by removing from Total Supply).
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>5</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(50,000,000,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(50,000,000,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(50,000,000,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Creator
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>36.9</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(369,000,000,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(369,000,000,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(369,000,000,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Dumped into the liquidity pool.
                                 </Text>
                             </Flex>
-                            <Flex flexDirection={"column"} w={"70%"}>
+                            <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
                                     <Text className='tokenomics-number'>20.02</Text>
                                     <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(200,240,076,000)</Text>
+                                    <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(200,240,076,000)</Text>
                                 </Flex>
+                                <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(200,240,076,000)</Text>
                                 <Text className='tokenomics-text'>
                                     Multisignature Team Wallet for collabs, additional liquidity, giveaways and more
                                 </Text>
@@ -142,8 +166,9 @@ export default function Home() {
                             <Flex>
                                 <Text className='tokenomics-number'>0.8</Text>
                                 <span className='color-accent-1 tokenomics-number'>%</span>
-                                    <Text display={"flex"} alignItems={"flex-end"} >(8,000,000,000)</Text>
+                                <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(8,000,000,000)</Text>
                             </Flex>
+                            <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(8,000,000,000)</Text>
                             <Text className='tokenomics-text'>
                                 Misc Expenditure
                             </Text>
@@ -158,8 +183,10 @@ export default function Home() {
                         Liquidity
                     </Text>
                 </Flex>
-                <Flex width={"80%"} alignItems={"center"}>
-                    <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
+                <Flex width={"80%"} alignItems={"center"} flexDirection={["column", "column", "column", "row"]}>
+                    <Flex width={"100%"}>
+                        <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
+                    </Flex>
                     <Text lineHeight={1.7} padding={"10px"} textAlign={"justify"}>
                         <b>35%</b> of the overall supply will be dumped into liquidity with an initial amount of 15 ETC.
                         This means that only purchases of about 0.5 ETC will initially go through.
@@ -178,8 +205,10 @@ export default function Home() {
                         Burning LP Tokens
                     </Text>
                 </Flex>
-                <Flex width={"80%"} alignItems={"center"}>
-                    <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
+                <Flex width={"80%"} alignItems={"center"} flexDirection={["column", "column", "column", "row"]}>
+                    <Flex width={"100%"}>
+                        <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
+                    </Flex>
                     <Text lineHeight={1.7} padding={"10px"} textAlign={"justify"}>
                         <b>70%</b> of liquidity pool tokens will be sent to a dead address. This means that our token will trade forever!
                         70% of our liquidity on HEBE Swap cannot be withdrawn! This also ensures the public that we are here to stay.

@@ -8,7 +8,7 @@ function About() {
             <Box id="about" w="100%" h="70vh" bg="#07091b" position="relative">
                 <Flex className="image-wrapper hero-v2" h={"70vh"}>
                     <Flex className="about-header-text-container">
-                        <Text className="about-header-text">
+                        <Text className="about-header-text" fontSize={["32px", "40px", "48px", "56px", "64px"]}>
                             ACE is the first community token on ETC
                         </Text>
                     </Flex>
