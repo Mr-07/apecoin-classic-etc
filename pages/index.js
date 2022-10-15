@@ -55,7 +55,7 @@ export default function Home() {
             <Box id="home1" w="100%" h="100%" bg="#07091b" position="relative">
                 <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
                     <Flex mb={"50px"} mt={"30px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                        <Text className='tokenomics-title'>
+                        <Text className='tokenomics-title' fontSize={["32px", "40px", "48px", "56px", "64px"]}>
                             Tokenomics
                         </Text>
                         <Flex mb={"10px"} mt={"10px"}>
@@ -68,8 +68,8 @@ export default function Home() {
                         <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={["100%", "100%", "100%", "100%", "33%"]}>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>2.13</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>2.13</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(21,320,000,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(21,320,000,000)</Text>
@@ -79,8 +79,8 @@ export default function Home() {
                             </Flex>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>1.54</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>1.54</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(15,439,924,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(15,439,924,000)</Text>
@@ -90,8 +90,8 @@ export default function Home() {
                             </Flex>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>9.8</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>9.8</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(98,000,000,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(98,000,000,000)</Text>
@@ -101,8 +101,8 @@ export default function Home() {
                             </Flex>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>2</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>2</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(20,000,000,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(20,000,000,000)</Text>
@@ -117,8 +117,8 @@ export default function Home() {
                         <Flex flexDirection={"column"} justifyContent={"space-around"} alignItems={"center"} padding={"10px 50px"} width={["100%", "100%", "100%", "100%", "33%"]}>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>21.8</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>21.8</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(218,000,000,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(218,000,000,000)</Text>
@@ -128,8 +128,8 @@ export default function Home() {
                             </Flex>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>5</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>5</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(50,000,000,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(50,000,000,000)</Text>
@@ -139,8 +139,8 @@ export default function Home() {
                             </Flex>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>36.9</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>36.9</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(369,000,000,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(369,000,000,000)</Text>
@@ -150,8 +150,8 @@ export default function Home() {
                             </Flex>
                             <Flex flexDirection={"column"} w={["50%", "50%", "50%", "50%", "70%"]} paddingBottom={["30px", "30px", "30px", "30px", "0px"]}>
                                 <Flex>
-                                    <Text className='tokenomics-number'>20.02</Text>
-                                    <span className='color-accent-1 tokenomics-number'>%</span>
+                                    <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>20.02</Text>
+                                    <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                     <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(200,240,076,000)</Text>
                                 </Flex>
                                 <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(200,240,076,000)</Text>
@@ -164,8 +164,8 @@ export default function Home() {
                     <Flex mt={"50px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
                         <Flex flexDirection={"column"}>
                             <Flex>
-                                <Text className='tokenomics-number'>0.8</Text>
-                                <span className='color-accent-1 tokenomics-number'>%</span>
+                                <Text className='tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>0.8</Text>
+                                <Text className='color-accent-1 tokenomics-number' fontSize={["32px", "40px", "48px", "56px", "64px"]}>%</Text>
                                 <Text display={["none", "none", "flex"]} alignItems={"flex-end"} >(8,000,000,000)</Text>
                             </Flex>
                             <Text display={["flex", "flex", "none"]} alignItems={"flex-end"} >(8,000,000,000)</Text>
@@ -179,7 +179,7 @@ export default function Home() {
             <div className="container-default w-container"><div className="divider _0px"></div></div>
             <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
                 <Flex mt={"50px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                    <Text className='tokenomics-title'>
+                    <Text className='tokenomics-title' fontSize={["32px", "40px", "48px", "56px", "64px"]}>
                         Liquidity
                     </Text>
                 </Flex>
@@ -201,7 +201,7 @@ export default function Home() {
             <div className="container-default w-container"><div className="divider _0px"></div></div>
             <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} >
                 <Flex mt={"50px"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                    <Text className='tokenomics-title'>
+                    <Text className='tokenomics-title' fontSize={["32px", "40px", "48px", "56px", "64px"]}>
                         Burning LP Tokens
                     </Text>
                 </Flex>
