@@ -2,9 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Flex, Box, useBreakpointValue, Text } from '@chakra-ui/react';
 import DesktopMenu from './DesktopMenu';
+import MobileMenu from './MobileMenu';
 // import { scroller } from 'react-scroll';
 // import { useScrollPosition } from '../../hooks';
-// import MobileMenu from './MobileMenu';
 
 const Header = ({ contract, setContract }) => {
     const variant = useBreakpointValue({ base: 'hamburger', lg: 'menu' }) || 'menu';
@@ -40,7 +40,7 @@ const Header = ({ contract, setContract }) => {
                 </Flex>
             </Flex>
             {variant === 'menu' && <DesktopMenu />}
-            {/* {variant === 'hamburger' && <MobileMenu setContract={setContract} contract={contract} />} */}
+            {variant === 'hamburger' && <MobileMenu />}
         </Flex>
     );
 };

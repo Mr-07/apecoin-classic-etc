@@ -210,12 +210,12 @@ export default function Home() {
                         <img src="liquidity.svg" loading="eager" alt="" className="image cover" />
                     </Flex>
                     <Text lineHeight={1.7} padding={"10px"} textAlign={"justify"}>
-                        <b>70%</b> of liquidity pool tokens will be sent to a dead address. This means that our token will trade forever!
+                        <b>70%</b> of initial liquidity pool tokens will be sent to a dead address. This means that our token will trade forever!
                         70% of our liquidity on HEBE Swap cannot be withdrawn! This also ensures the public that we are here to stay.
                         You may be wondering why 70% and not 100%? This is because we are preparing for the future as well.
                         When we get to a point where we are able to get listed on a major exchange, we would need a lot of liquidity
                         to be accepted on some of the large exchanges and it would be a shame if we had several million dollars of liquidity
-                        stuck on Hebe Swap and couldn’t move 200K for liquidity to get listed on Binance or Kucoin.
+                        stuck on Hebe Swap and couldn't move 200K for liquidity to get listed on Binance or Kucoin.
                     </Text>
                 </Flex>
             </Flex>
