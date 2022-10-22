@@ -99,16 +99,19 @@ const MobileMenu = ({ contract, setContract }) => {
                                     icon={FaTwitter}
                                     size="28px"
                                     href="https://twitter.com/Apecoin_classic"
+                                    color={"#9c9da4"}
                                 />
                                 <SquareIconButton
                                     icon={FaTelegramPlane}
                                     size="28px"
                                     href="https://t.me/apecoinclassic"
+                                    color={"#9c9da4"}
                                 />
                                 <SquareIconButton
                                     icon={FaMedium}
                                     size="28px"
                                     href="https://medium.com/@apecoinclassic"
+                                    color={"#9c9da4"}
                                 />
                             </HStack>
                             <Center mt={4} color="#75A7D3" fontSize="15px">

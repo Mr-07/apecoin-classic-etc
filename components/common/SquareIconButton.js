@@ -1,13 +1,14 @@
 import React from "react";
 import { Link, Icon, Center, Square } from "@chakra-ui/react";
 
-const SquareIconButton = ({ size = "40px", href, icon }) => {
+const SquareIconButton = ({ size = "40px", href, icon, color = 'inherit' }) => {
     return (
         <Link
             href={href}
             isExternal
             _hover={{ textDecoration: "none", outline: "none", outlineOffset: 0 }}
             _focus={{ outline: "none" }}
+            color={color}
         >
             <Center>
                 <Square
