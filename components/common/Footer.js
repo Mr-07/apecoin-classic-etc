@@ -21,7 +21,7 @@ const Footer = () => {
                 <Flex
                     borderRight={["unset", "unset", "1px solid hsla(0, 0%, 100%, 0.4)"]}
                     flexDirection={"column"} alignItems={"center"} mixBlendMode={"lighten"}
-                    pr={"30px"} mr={"30px"} h={"300px"} overflow={"hidden"} w={["100%", "100%", "50%"]}
+                    pr={["0px", "0px", "30px"]} mr={["0px", "0px", "30px"]} h={"300px"} overflow={"hidden"} w={["100%", "100%", "50%"]}
                     borderBottom={["1px solid hsla(0, 0%, 100%, 0.4)", "1px solid hsla(0, 0%, 100%, 0.4)", "unset"]}
                 >
                     <Flex alignItems={"center"} opacity={0.8} flexDirection={"column"} justifyContent={"center"} position={"absolute"} zIndex={"10"}>
