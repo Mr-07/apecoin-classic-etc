@@ -41,7 +41,7 @@ const MobileMenu = ({ contract, setContract }) => {
 
     return (
         <>
-            <Box as="nav" pt="6">
+            <Box as="nav">
                 <Drawer placement="bottom" onClose={onClose} isOpen={isOpen}>
                     <DrawerOverlay />
                     <DrawerContent px={0}>
