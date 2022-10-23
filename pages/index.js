@@ -11,7 +11,7 @@ export default function Home() {
         <>
             <Box id="home" w="100%" h="100%" bg="#07091b" position="relative">
                 <Flex className="image-wrapper hero-v1">
-                    <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} position={"absolute"} top={["30%", "30%", "30%", "30%", "20%"]} zIndex={11}>
+                    <Flex justifyContent={"center"} alignItems={"center"} flexDirection={"column"} position={"absolute"} top={["30%", "30%", "30%", "30%", "20%"]} zIndex={11} w={"100%"}>
                         <Text className='tokenomics-title' fontSize={["32px", "40px", "48px", "56px", "64px"]}>
                             ApeCoin Classic ETC
                         </Text>
