@@ -192,3 +192,64 @@ a {
     background: black;
   }
 }
+
+
+
+.raffle-container {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 5rem;
+  /* width: 85%; */
+}
+
+.raffle-row {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.raffle-column {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.raffle-card-header {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.raffle-card-text {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.raffle-slot {
+  width: 100%;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.raffle-slotTaken {
+  font-size: 0.8rem;
+  background-color: rgb(87, 87, 87);
+  border-color: rgb(87, 87, 87);
+}
+
+.raffle-slotFree {
+  /* font-size: 0.8rem; */
+  background-color: #53825c;
+  border-color: #53825c;
+  padding: 0.1rem;
+  
+}
+
+.raffle-slotFree:hover {
+  cursor: pointer;
+}
+
+.raffle-last-winner {
+  text-align: center;
+}

@@ -18,6 +18,11 @@ const DesktopMenu = () => {
                         About
                     </a>
                 </li>
+                <li className={styles.menuBtn}>
+                    <a href="/BurnRaffle">
+                        Burn Raffle
+                    </a>
+                </li>
                 <li className={styles.disabledMenuBtn} title={"coming soon..."}>
                     {/* <a href="https://docs.google.com/document/u/0/d/14r4oyV36HcDV_LAU5PyVqAKh_XWTo-yfe3TanmTtodY/mobilebasic" target="_blank"> */}
                         Whitepaper
