@@ -9,17 +9,27 @@ const participantsCountRequired = 11
 
 // todo: limit 1 blockchain call every 5 mins per raffle
 
+const getRandom256Int = () => {
+    var temp = '0b';
+    for (let i = 0; i < 256; i++)
+      temp += Math.round(Math.random());
+
+    const randomNum = BigInt(temp);
+    console.log(randomNum.toString());
+    return randomNum.toString()
+}
+
 export default async function handler(request, response) {
     const { database } = await connectToDatabase();
     const collection = database.collection(process.env.NEXT_ATLAS_COLLECTION);
     const {
-        query: { raffle_id }
+        query: { raffle_address }
       } = request;
 
-    const results = await collection.find({raffle_id: parseInt(raffle_id)}).limit(10).toArray();
+    const results = await collection.find({raffle_address: raffle_address}).limit(10).toArray();
 
     if (results.length == 0) {
-        response.status(500).json("Could not find raffle id " + raffle_id);
+        response.status(500).json("Could not find raffle address " + raffle_address);
         return
     }
 
@@ -29,7 +39,7 @@ export default async function handler(request, response) {
     }
 
 
-    await collection.updateOne({raffle_id: parseInt(raffle_id)}, { $set: { not_processing: false } });
+    await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: false } });
 
     const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_API_URL_GOERLI_INFURA)
     const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY_GOERLI, provider)
@@ -37,19 +47,27 @@ export default async function handler(request, response) {
     const raffle = new ethers.Contract(RaffleAddress.address, RaffleAbi.abi, wallet)
 
     const currentWinner = results[0].next_winner
-    const nextRandomNumber = Math.random()
+
+    const nextRandomNumber = getRandom256Int()
     const nextProvenanceHash = buf2hex(keccak256(nextRandomNumber))
 
     const participantsCount = await raffle.participantsCount()
 
     if (participantsCount < participantsCountRequired) {
-        await collection.updateOne({raffle_id: parseInt(raffle_id)}, { $set: { not_processing: true } });
+        await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: true } });
         response.status(500).json("This raffle is not full yet. (" + participantsCount + "/" + participantsCountRequired + ")");
         return
     }
 
-    await raffle.endRaffle(currentWinner, nextProvenanceHash);
-    await collection.updateOne({raffle_id: parseInt(raffle_id)}, { $set: { not_processing: true, next_winner: nextRandomNumber } });
+    try {
+        await raffle.endRaffle(currentWinner, nextProvenanceHash);
+    } catch (error) {
+        await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: true } });
+        response.status(500).json(error);
+        return
+    }
 
-    response.status(200).json({raffleId: parseInt(raffle_id), currentWinner: currentWinner});
+    await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: true, next_winner: nextRandomNumber } });
+
+    response.status(200).json({raffleId: raffle_address, currentWinner: currentWinner});
 }
