@@ -6,8 +6,7 @@ const keccak256 = require("keccak256")
 const buf2hex = x => '0x' + x.toString('hex')
 
 const participantsCountRequired = 11
-
-// todo: limit 1 blockchain call every 5 mins per raffle
+const delayBetweenCallsInSeconds = 20
 
 const getRandom256Int = () => {
     var temp = '0b';
@@ -33,13 +32,16 @@ export default async function handler(request, response) {
         return
     }
 
-    if (!results[0]?.not_processing) {
-        response.status(500).json("Server is already processing to end this raffle");
+    const lastProcessingTimestamp = results[0]?.last_processing_timestamp
+    const currentTimestamp = Math.floor(Date.now() / 1000)
+    const timeLeft = lastProcessingTimestamp + delayBetweenCallsInSeconds - currentTimestamp
+    if (timeLeft > 0) {
+        response.status(500).json("Please wait " + timeLeft + " seconds before the next request");
         return
     }
 
 
-    await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: false } });
+    await collection.updateOne({raffle_address: raffle_address}, { $set: { last_processing_timestamp: currentTimestamp } });
 
     const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_API_URL_GOERLI_INFURA)
     const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY_GOERLI, provider)
@@ -54,7 +56,6 @@ export default async function handler(request, response) {
     const participantsCount = await raffle.participantsCount()
 
     if (participantsCount < participantsCountRequired) {
-        await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: true } });
         response.status(500).json("This raffle is not full yet. (" + participantsCount + "/" + participantsCountRequired + ")");
         return
     }
@@ -62,12 +63,9 @@ export default async function handler(request, response) {
     try {
         await raffle.endRaffle(currentWinner, nextProvenanceHash);
     } catch (error) {
-        await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: true } });
         response.status(500).json(error);
         return
     }
-
-    await collection.updateOne({raffle_address: raffle_address}, { $set: { not_processing: true, next_winner: nextRandomNumber } });
 
     response.status(200).json({raffleId: raffle_address, currentWinner: currentWinner});
 }
