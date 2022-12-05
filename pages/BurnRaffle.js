@@ -1,9 +1,138 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 import Raffle from "../components/common/Raffle";
+import { ethers } from 'ethers'
 import { motion } from "framer-motion";
+import RaffleAbi from '../lib/contractsData/Raffle.json'
+import RaffleAddress from '../lib/contractsData/Raffle-address.json'
+import TokenAbi from '../lib/contractsData/Token.json'
+import TokenAddress from '../lib/contractsData/Token-address.json'
+import Axios from 'axios'
+
+const fromWei = (num) => ethers.utils.formatEther(num)
+const toWei = (num) => ethers.utils.parseEther(num.toString())
 
 function BurnRaffle() {
+	const [raffle, setRaffle] = useState(null);
+	const [token, setToken] = useState(null);
+    const [account, setAccount] = useState(null)
+    const [slots1, setSlots1] = useState([])
+    const [allowance, setAllowance] = useState("")
+    const [lastWinner, setLastWinner] = useState("")
+    const [totalPayouts, setTotalPayouts] = useState("")
+    const [totalBurn, setTotalBurn] = useState("")
+    const [isSlotFilled, setIsSlotFilled] = useState(false)
+    const raffleRef = useRef();
+    raffleRef.current = raffle;
+
+    const requestEndRaffle = async () => {
+        console.log("requestEndRaffle")
+        
+        let serverUrl = "http://localhost:3000/"
+        Axios.post(serverUrl + 'api/end_raffle?raffle_address=' + RaffleAddress.address, {
+            raffle_address: RaffleAddress.address
+        }).then((response) => {
+            const serverResult = response.data
+            console.log(serverResult)
+            loadSlots(raffleRef.current)
+        })
+    }
+    
+    const listenToEvents = async (raffle) => {
+        raffle.on("SlotEntered", (user, slot) => {
+            console.log("SlotEntered");
+            console.log(user, slot);
+            loadSlots(raffleRef.current)
+        });
+        raffle.on("SlotLeft", (user, slot) => {
+            console.log("SlotLeft");
+            console.log(user, slot);
+            loadSlots(raffleRef.current)
+        });
+        raffle.on("RaffleFilled", () => {
+            console.log("RaffleFilled");
+            requestEndRaffle()
+        });
+    }
+
+    const loadSlots = async(raffle) => {
+        if (raffle == null)
+            return
+        
+        console.log("Load slots")
+        const participants = await raffle.getParticipants()
+        console.log(participants)
+
+        let slotsTemp = [
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+            { address: "Loading..." },
+        ]
+
+        for(let i = 0; i < participants.length; i++) {
+            slotsTemp[i].address = participants[i]
+        }
+
+        setSlots1(slotsTemp)
+        
+        setLastWinner(await raffle.lastWinner())
+        setTotalPayouts(fromWei(await raffle.totalPayout()))
+        setTotalBurn(fromWei(await raffle.totalBurned()))
+        setIsSlotFilled((await raffle.participantsCount()) >= 11)
+    }
+
+    const web3Handler = async () => {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        setAccount(accounts[0])
+
+        await loadContracts(accounts[0])
+    }
+  
+    const loadContracts = async (acc) => {
+        console.log("Load contracts")
+        const provider = new ethers.providers.Web3Provider(window.ethereum)
+        const signer = provider.getSigner()
+
+        const raffle = new ethers.Contract(RaffleAddress.address, RaffleAbi.abi, signer)
+        setRaffle(raffle)
+        const token = new ethers.Contract(TokenAddress.address, TokenAbi.abi, signer)
+        setToken(token)
+        await loadSlots(raffle)
+        listenToEvents(raffle)
+
+        console.log(acc)
+        console.log(raffle.address)
+
+        let all = fromWei(await token.allowance(acc, raffle.address))
+        console.log(all)
+        setAllowance(all)
+
+        if (parseInt(all) == 0) {
+            console.log("Approve")
+            await token.approve(raffle.address, toWei(10_000_000_000))
+            let all = fromWei(await token.allowance(acc, raffle.address))
+            setAllowance(all)
+        }
+    }
+  
+    useEffect(() => {
+        web3Handler()
+
+        return () => {
+          raffle?.removeAllListeners("SlotEntered");
+          raffle?.removeAllListeners("RaffleFilled");
+          raffle?.removeAllListeners("SlotLeft");
+        };
+    }, [])
+
     return (
         <>
             <Box id="burn-raffle" w="100%" h="100%" bg="#07091b" position="relative">
@@ -11,9 +140,12 @@ function BurnRaffle() {
                     
                     <Flex className="raffle-container" >
                         {/* <div className="raffle-row row"> */}
-                            <Raffle id={0} name={"20M"}/>
-                            <Raffle id={1} name={"50M"}/>
-                            <Raffle id={2} name={"200M"}/>
+                            <Raffle id={0} name={"20M"} account={account} raffle={raffle} web3Handler={web3Handler} 
+                                slots={slots1} allowance={allowance} setAllowance={setAllowance} token={token} 
+                                lastWinner={lastWinner} totalPayouts={totalPayouts} totalBurn={totalBurn} 
+                                isSlotFilled={isSlotFilled} requestEndRaffle={requestEndRaffle} />
+                            {/* <Raffle id={1} name={"50M"} account={account} raffle={raffle} web3Handler={web3Handler} />
+                            <Raffle id={2} name={"200M"} account={account} raffle={raffle} web3Handler={web3Handler} /> */}
                         {/* </div> */}
 
                         {/* <div className="row">

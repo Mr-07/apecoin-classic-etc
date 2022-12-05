@@ -246,7 +246,7 @@ a {
   
 }
 
-.raffle-slotFree:hover {
+.raffle-slotFree:hover, .raffle-slotTaken:hover {
   cursor: pointer;
 }
 
