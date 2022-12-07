@@ -105,7 +105,7 @@ function BurnRaffle() {
 
         const raffle = new ethers.Contract(RaffleAddress.address, RaffleAbi.abi, signer)
         setRaffle(raffle)
-        const token = new ethers.Contract(TokenAddress.address, TokenAbi.abi, signer)
+        const token = new ethers.Contract(TokenAddress.address, TokenAbi, signer)
         setToken(token)
         await loadSlots(raffle)
         listenToEvents(raffle)
