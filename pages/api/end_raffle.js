@@ -51,7 +51,7 @@ export default async function handler(request, response) {
     const currentWinner = results[0].next_winner
 
     const nextRandomNumber = getRandom256Int()
-    const nextProvenanceHash = buf2hex(keccak256(nextRandomNumber))
+    const nextProvenanceHash = buf2hex(keccak256(parseInt(nextRandomNumber)))
 
     const participantsCount = await raffle.participantsCount()
 
