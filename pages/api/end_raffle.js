@@ -8,9 +8,9 @@ const buf2hex = x => '0x' + x.toString('hex')
 const participantsCountRequired = 11
 const delayBetweenCallsInSeconds = 20
 
-const getRandom16Int = () => {
+const getRandom32Int = () => {
     var temp = '0b';
-    for (let i = 0; i < 16; i++)
+    for (let i = 0; i < 32; i++)
       temp += Math.round(Math.random());
 
     const randomNum = BigInt(temp);
@@ -50,7 +50,7 @@ export default async function handler(request, response) {
 
     const currentWinner = results[0].next_winner
 
-    const nextRandomNumber = getRandom16Int()
+    const nextRandomNumber = getRandom32Int()
     const nextProvenanceHash = buf2hex(keccak256(parseInt(nextRandomNumber)))
 
     const participantsCount = await raffle.participantsCount()

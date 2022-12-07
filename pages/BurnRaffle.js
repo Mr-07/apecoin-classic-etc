@@ -5,8 +5,10 @@ import { ethers } from 'ethers'
 import { motion } from "framer-motion";
 import RaffleAbi from '../lib/contractsData/Raffle.json'
 import RaffleAddress from '../lib/contractsData/Raffle-address.json'
-import TokenAbi from '../lib/contractsData/Token.json'
-import TokenAddress from '../lib/contractsData/Token-address.json'
+// import TokenAbi from '../lib/contractsData/Token.json'
+// import TokenAddress from '../lib/contractsData/Token-address.json'
+import TokenAbi from '../lib/contractsData/ApeCoinAbi.json'
+import TokenAddress from '../lib/contractsData/ApeCoin-address.json'
 import Axios from 'axios'
 
 const fromWei = (num) => ethers.utils.formatEther(num)
