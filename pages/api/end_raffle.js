@@ -79,6 +79,7 @@ const handler = async (request, response) => {
 
     try {
         await raffle.endRaffle(currentWinner, nextProvenanceHash);
+        await collection.updateOne({raffle_address: raffle_address}, { $set: { next_winner: nextRandomNumber } });
     } catch (error) {
         response.status(500).json(error);
         return
