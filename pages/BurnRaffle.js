@@ -55,6 +55,10 @@ function BurnRaffle() {
             console.log("RaffleFilled");
             requestEndRaffle()
         });
+        raffle.on("RaffleEnded", () => {
+            console.log("RaffleEnded");
+            loadSlots(raffleRef.current)
+        });
     }
 
     const loadSlots = async(raffle) => {
