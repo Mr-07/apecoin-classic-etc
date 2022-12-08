@@ -43,8 +43,8 @@ export default async function handler(request, response) {
 
     await collection.updateOne({raffle_address: raffle_address}, { $set: { last_processing_timestamp: currentTimestamp } });
 
-    const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_API_URL_GOERLI_INFURA)
-    const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY_GOERLI, provider)
+    const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_API_URL_ETC)
+    const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY_ETC, provider)
 
     const raffle = new ethers.Contract(RaffleAddress.address, RaffleAbi.abi, wallet)
 
