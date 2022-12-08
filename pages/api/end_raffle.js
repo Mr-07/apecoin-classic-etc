@@ -8,6 +8,23 @@ const buf2hex = x => '0x' + x.toString('hex')
 const participantsCountRequired = 11
 const delayBetweenCallsInSeconds = 20
 
+const allowCors = fn => async (req, res) => {
+    res.setHeader('Access-Control-Allow-Credentials', true)
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    // another common pattern
+    // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+    res.setHeader(
+      'Access-Control-Allow-Headers',
+      'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+    )
+    if (req.method === 'OPTIONS') {
+      res.status(200).end()
+      return
+    }
+    return await fn(req, res)
+  }
+
 const getRandom32Int = () => {
     var temp = '0b';
     for (let i = 0; i < 32; i++)
@@ -18,7 +35,7 @@ const getRandom32Int = () => {
     return randomNum.toString()
 }
 
-export default async function handler(request, response) {
+const handler = async (request, response) => {
     const { database } = await connectToDatabase();
     const collection = database.collection(process.env.NEXT_ATLAS_COLLECTION);
     const {
@@ -69,3 +86,6 @@ export default async function handler(request, response) {
 
     response.status(200).json({raffleId: raffle_address, currentWinner: currentWinner});
 }
+
+
+module.exports = allowCors(handler)
