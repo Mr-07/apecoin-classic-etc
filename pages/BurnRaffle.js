@@ -31,6 +31,7 @@ function BurnRaffle() {
         console.log("requestEndRaffle")
         
         let serverUrl = "http://localhost:3000/"
+        serverUrl = "https://apecoin-classic-etc.vercel.app/"
         Axios.post(serverUrl + 'api/end_raffle?raffle_address=' + RaffleAddress.address, {
             raffle_address: RaffleAddress.address
         }).then((response) => {
