@@ -1,7 +1,6 @@
 import { connectToDatabase } from "../../lib/mongodb";
 import { ethers } from "ethers"
 import RaffleAbi from '../../lib/contractsData/Raffle.json'
-import RaffleAddress from '../../lib/contractsData/Raffle-address.json'
 const keccak256 = require("keccak256")
 const buf2hex = x => '0x' + x.toString('hex')
 
@@ -63,7 +62,7 @@ const handler = async (request, response) => {
     const provider = new ethers.providers.JsonRpcProvider(process.env.REACT_APP_API_URL_ETC)
     const wallet = new ethers.Wallet(process.env.REACT_APP_PRIVATE_KEY_ETC, provider)
 
-    const raffle = new ethers.Contract(RaffleAddress.address, RaffleAbi.abi, wallet)
+    const raffle = new ethers.Contract(raffle_address, RaffleAbi.abi, wallet)
 
     const currentWinner = results[0].next_winner
 
