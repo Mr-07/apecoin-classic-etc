@@ -5,7 +5,7 @@ const keccak256 = require("keccak256")
 const buf2hex = x => '0x' + x.toString('hex')
 
 const participantsCountRequired = 11
-const delayBetweenCallsInSeconds = 20
+const delayBetweenCallsInSeconds = 60 * 15
 
 const allowCors = fn => async (req, res) => {
     res.setHeader('Access-Control-Allow-Credentials', true)
