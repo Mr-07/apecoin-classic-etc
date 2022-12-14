@@ -199,7 +199,15 @@ a {
   margin-left: 2rem;
   margin-right: 2rem;
   margin-top: 5rem;
-  /* width: 85%; */
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1199.98px){
+  .raffle-container {
+    display: block;
+    align-items: center;
+  }
 }
 
 .raffle-row {
@@ -252,4 +260,5 @@ a {
 
 .raffle-last-winner {
   text-align: center;
+  font-size: 0.8rem;
 }
