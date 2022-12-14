@@ -73,6 +73,11 @@ const MobileMenu = ({ contract, setContract }) => {
                                         About
                                     </a>
                                 </ListItem>
+                                <ListItem mb={3}>
+                                    <a href="/BurnRaffle">
+                                        Burn Raffle
+                                    </a>
+                                </ListItem>
                                 <ListItem className={styles.disabledMenuBtn} mb={3}>
                                     {/* <a href="https://docs.google.com/document/u/0/d/14r4oyV36HcDV_LAU5PyVqAKh_XWTo-yfe3TanmTtodY/mobilebasic" target="_blank"> */}
                                     Whitepaper
