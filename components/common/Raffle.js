@@ -17,15 +17,21 @@ const Raffle = ({id, name, account, raffle, token, web3Handler, requestEndRaffle
 
         console.log("allowance: " + parseInt(raffle.allowance))
 
-        if (parseInt(raffle.allowance) == 0) {
-            console.log("Approve")
-            await token.approve(raffle.contractInstance.address, toWei(10_000_000_000))
-            let all = fromWei(await token.allowance(account, raffle.contractInstance.address))
-            raffleRef.current.allowance = all
-            return
-        }
+        try {
+            if (parseInt(raffle.allowance) == 0) {
+                console.log("Approve")
+                await(await token.approve(raffle.contractInstance.address, toWei(10_000_000_000))).wait()
+                let all = fromWei(await token.allowance(account, raffle.contractInstance.address))
+                raffleRef.current.allowance = all
+            }
 
-        await raffle.contractInstance.play(slotId)
+            await(await raffle.contractInstance.play(slotId))
+        }
+        catch (error) {
+            console.error("Custom error handling: " + error);
+            // alert((error.toString()).split('reverted:')[1].split('"')[0]);
+            alert((error.toString()));
+        };
     }
 
     const pullOutRaffle = async(slotId) => {
